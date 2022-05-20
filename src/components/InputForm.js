@@ -59,11 +59,11 @@ function InputForm({ messageList, setMessageList }) {
       <textarea
         id="prompt"
         type="text"
-        className="w5 noresize input-box mr4"
+        className="w5 noresize input-box"
         value={input}
         onChange={handleFormChange}
       />
-      <div className="flex pv3">
+      <div className="flex pv3 mb3">
         <Chip
           className="chip"
           label="Tell me a story about..."
@@ -81,7 +81,7 @@ function InputForm({ messageList, setMessageList }) {
         />
       </div>
       <div className="flex items-center">
-        <button className="submit mt3" onClick={submitForm}>
+        <button className="submit mr4" onClick={submitForm}>
           SUBMIT
         </button>
         {loading ? <CircularProgress /> : <></>}
