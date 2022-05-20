@@ -10,12 +10,15 @@ function App() {
 
   return (
     <div className="flex flex-column wrapper roboto pv5">
-      <div className="f2">Welcome to my OpenAI Playground!</div>
-      <InputForm messageList={messageList} setMessageList={setMessageList} />
-      {/* <div className="f3 mt6">Responses</div> */}
-      {messageList.map((message) => (
-        <Response prompt={message.prompt} response={message.response} />
-      ))}
+      <header>
+        <h1 className="">Welcome to my OpenAI Playground!</h1>
+      </header>
+      <main>
+        <InputForm messageList={messageList} setMessageList={setMessageList} />
+        {messageList.map((message) => (
+          <Response prompt={message.prompt} response={message.response} />
+        ))}
+      </main>
     </div>
   );
 }

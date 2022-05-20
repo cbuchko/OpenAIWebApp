@@ -1,32 +1,32 @@
 .submit {
-    font-family: "Roboto Mono";
-    background-color: #9b5094; /* Green */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    width: 14rem;
-    border-radius: 0.5rem;
-    padding: 1rem;
-  }
+  font-family: "Roboto Mono";
+  background-color: #9b5094; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: 14rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
 
-  .submit:hover {
-    background-color: #863c7f;
-    cursor: pointer;
-  }
+.submit:hover {
+  background-color: #863c7f;
+  cursor: pointer;
+}
 
-  .noresize{
-      resize: none;
-  }
+.noresize {
+  resize: none;
+}
 
-  .input-box {
-    padding: 0.5rem;
-    width: 30rem;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
+.input-box {
+  padding: 0.5rem;
+  width: 30rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-  .chip {
-    margin: 0 0.5rem !important;
-  }
+.chip {
+  margin: 0 0.5rem !important;
+}

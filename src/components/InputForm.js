@@ -49,13 +49,16 @@ function InputForm({ messageList, setMessageList }) {
   const handleChipClick = (e) => {
     const text = e.target.textContent.slice(0, -3) + " ";
     setInput(text);
-  }
+  };
 
   return (
     <form className="pt5 flex flex-column">
-      <label className="b pv2">Enter a prompt for the AI to respond to!</label>
+      <label for="prompt" className="b pv2">
+        Enter a prompt for the AI to respond to!
+      </label>
       <div className="flex items-center">
         <textarea
+          id="prompt"
           type="text"
           className="w5 noresize input-box mr4"
           value={input}
@@ -64,16 +67,25 @@ function InputForm({ messageList, setMessageList }) {
         {loading ? <CircularProgress /> : <></>}
       </div>
       <div className="flex pv3">
-        <Chip className="chip" label="Tell me a story about..." onClick={handleChipClick}/>
-        <Chip className="chip" label="Write a movie script about..." onClick={handleChipClick}/>
-        <Chip className="chip" label="Write a food review for..." onClick={handleChipClick}/>
+        <Chip
+          className="chip"
+          label="Tell me a story about..."
+          onClick={handleChipClick}
+        />
+        <Chip
+          className="chip"
+          label="Write a movie script about..."
+          onClick={handleChipClick}
+        />
+        <Chip
+          className="chip"
+          label="Write a food review for..."
+          onClick={handleChipClick}
+        />
       </div>
-      <input
-        type="submit"
-        value="SUBMIT"
-        className="submit mt3"
-        onClick={submitForm}
-      />
+      <button className="submit mt3" onClick={submitForm}>
+        SUBMIT
+      </button>
     </form>
   );
 }
