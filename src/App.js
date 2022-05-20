@@ -9,8 +9,8 @@ function App() {
   const [messageList, setMessageList] = useState([]);
 
   return (
-    <div className="flex flex-column wrapper roboto">
-      <div className="f2 pv5">Welcome to my Shopify App!</div>
+    <div className="flex flex-column wrapper roboto pv5">
+      <div className="f2">Welcome to my OpenAI Playground!</div>
       <InputForm messageList={messageList} setMessageList={setMessageList} />
       {/* <div className="f3 mt6">Responses</div> */}
       {messageList.map((message) => (
