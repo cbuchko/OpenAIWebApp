@@ -24,8 +24,8 @@ function Response({ prompt, response }) {
         </IconButton>
       </div>
       <Collapse className="lh-title" in={open} timeout="auto" unmountOnExit>
-        {responseSplit.map((response) => (
-          <p className="flex mv0 pv1">{response}</p>
+        {responseSplit.map((response, index) => (
+          <p key={index} className="flex mv0 pv1">{response}</p>
         ))}
       </Collapse>
     </div>

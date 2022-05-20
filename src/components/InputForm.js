@@ -53,19 +53,16 @@ function InputForm({ messageList, setMessageList }) {
 
   return (
     <form className="pt5 flex flex-column">
-      <label for="prompt" className="b pv2">
+      <label htmlFor="prompt" className="b pv2">
         Enter a prompt for the AI to respond to!
       </label>
-      <div className="flex items-center">
-        <textarea
-          id="prompt"
-          type="text"
-          className="w5 noresize input-box mr4"
-          value={input}
-          onChange={handleFormChange}
-        />
-        {loading ? <CircularProgress /> : <></>}
-      </div>
+      <textarea
+        id="prompt"
+        type="text"
+        className="w5 noresize input-box mr4"
+        value={input}
+        onChange={handleFormChange}
+      />
       <div className="flex pv3">
         <Chip
           className="chip"
@@ -83,9 +80,12 @@ function InputForm({ messageList, setMessageList }) {
           onClick={handleChipClick}
         />
       </div>
-      <button className="submit mt3" onClick={submitForm}>
-        SUBMIT
-      </button>
+      <div className="flex items-center">
+        <button className="submit mt3" onClick={submitForm}>
+          SUBMIT
+        </button>
+        {loading ? <CircularProgress /> : <></>}
+      </div>
     </form>
   );
 }

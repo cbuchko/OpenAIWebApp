@@ -15,8 +15,8 @@ function App() {
       </header>
       <main>
         <InputForm messageList={messageList} setMessageList={setMessageList} />
-        {messageList.map((message) => (
-          <Response prompt={message.prompt} response={message.response} />
+        {messageList.map((message, index) => (
+          <Response key={index} prompt={message.prompt} response={message.response} />
         ))}
       </main>
     </div>
