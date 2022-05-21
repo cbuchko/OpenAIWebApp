@@ -3,10 +3,15 @@ import "./styles/styles.css";
 import InputForm from "./components/InputForm";
 import Response from "./components/Response";
 import "@fontsource/roboto-mono"; // Defaults to weight 400 with all styles included.
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [messageList, setMessageList] = useState([]);
+  const defaultMessages = JSON.parse(localStorage.getItem("responses"));
+  const [messageList, setMessageList] = useState(defaultMessages);
+
+  useEffect(() => {
+    localStorage.setItem("responses", JSON.stringify(messageList));
+  },[messageList]);
 
   return (
     <div className="flex flex-column wrapper roboto mv5">
