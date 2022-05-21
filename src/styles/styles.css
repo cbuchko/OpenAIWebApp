@@ -2,4 +2,8 @@
     margin: 0 30%;
 }
 
+.mainContainer {
+    width: 34rem;
+}
+
 .roboto {font-family: 'Roboto', sans-serif}

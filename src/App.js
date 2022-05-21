@@ -13,7 +13,7 @@ function App() {
       <header>
         <h1 className="">Welcome to my OpenAI Playground!</h1>
       </header>
-      <main>
+      <main className="mainContainer">
         <InputForm messageList={messageList} setMessageList={setMessageList} />
         {messageList.map((message, index) => (
           <Response key={index} prompt={message.prompt} response={message.response} />
