@@ -34,7 +34,20 @@ function InputForm({ messageList, setMessageList }) {
     const responseJSON = await response.json();
     //for now just selecting first choice
     const responseContent = responseJSON.choices[0].text;
-    const messageItem = { prompt: input, response: responseContent };
+    let messageItem = {prompt: "", response: ""};
+
+    //sometimes OpenAI adds more to the prompt, but it appears in the response.
+    //eg. adding " and jelly" to the prompt, "write a review for peanut butter".
+    //The below handles this edge case
+    if(responseContent.charAt(0) === "\n"){
+      messageItem = { prompt: input, response: responseContent };
+    } else {
+      const extraPrompt = responseContent.split("\n\n");
+      const newPrompt = input + extraPrompt[0];
+      const [,...newResponse] = extraPrompt;
+      messageItem = { prompt: newPrompt, response: "\n" + newResponse.toString()}
+    }
+
     setMessageList([messageItem, ...messageList]);
     setInput("");
     setLoading(false);
