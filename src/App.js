@@ -6,7 +6,7 @@ import "@fontsource/roboto-mono"; // Defaults to weight 400 with all styles incl
 import { useEffect, useState } from "react";
 
 function App() {
-  const defaultMessages = JSON.parse(localStorage.getItem("responses"));
+  const defaultMessages = JSON.parse(localStorage.getItem("responses")) || [];
   const [messageList, setMessageList] = useState(defaultMessages);
 
   useEffect(() => {
