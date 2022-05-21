@@ -2,10 +2,13 @@ import { useState } from "react";
 import "./../styles/inputForm.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import Chip from "@mui/material/Chip";
+import { useWindowSize } from "./useWindowSize";
 
 function InputForm({ messageList, setMessageList }) {
   const [input, setInput] = useState();
   const [loading, setLoading] = useState(false);
+
+  const mobile = useWindowSize();
 
   const getResponse = async () => {
     const data = {
@@ -62,23 +65,31 @@ function InputForm({ messageList, setMessageList }) {
         className="w5 noresize input-box"
         value={input}
         onChange={handleFormChange}
+        disabled={loading}
       />
       <div className="flex pv3 mb3">
-        <Chip
-          className="chip"
-          label="Tell me a story about..."
-          onClick={handleChipClick}
-        />
-        <Chip
-          className="chip"
-          label="Write a movie script about..."
-          onClick={handleChipClick}
-        />
-        <Chip
-          className="chip"
-          label="Write a food review for..."
-          onClick={handleChipClick}
-        />
+        <div className="chip">
+          <Chip
+            label={mobile ? "Tell a story..." : "Tell me a story about..."}
+            onClick={handleChipClick}
+          />
+        </div>
+        <div className="chip">
+          <Chip
+            className="chip"
+            label={
+              mobile ? "Write a movie..." : "Write a movie script about..."
+            }
+            onClick={handleChipClick}
+          />
+        </div>
+        <div className="chip">
+          <Chip
+            className="chip"
+            label={mobile ? "Write a review..." : "Write a food review for..."}
+            onClick={handleChipClick}
+          />
+        </div>
       </div>
       <div className="flex items-center">
         <button className="submit mr4" onClick={submitForm}>

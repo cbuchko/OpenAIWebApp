@@ -9,14 +9,18 @@ function App() {
   const [messageList, setMessageList] = useState([]);
 
   return (
-    <div className="flex flex-column wrapper roboto pv5">
+    <div className="flex flex-column wrapper roboto mv5">
       <header>
         <h1 className="">Welcome to my OpenAI Playground!</h1>
       </header>
       <main className="mainContainer">
         <InputForm messageList={messageList} setMessageList={setMessageList} />
         {messageList.map((message, index) => (
-          <Response key={index} prompt={message.prompt} response={message.response} />
+          <Response
+            key={index}
+            prompt={message.prompt}
+            response={message.response}
+          />
         ))}
       </main>
     </div>

@@ -1,9 +1,29 @@
 .wrapper {
-    margin: 0 30%;
+  margin: 4rem 30%;
 }
 
 .mainContainer {
-    width: 34rem;
+  width: 34rem;
 }
 
-.roboto {font-family: 'Roboto', sans-serif}
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 1150px) {
+  .wrapper {
+    margin: 2rem 5%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .mainContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mainContainer {
+    width: 21rem;
+  }
+}

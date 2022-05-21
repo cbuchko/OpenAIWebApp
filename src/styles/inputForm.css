@@ -28,5 +28,21 @@
 }
 
 .chip {
-  margin: 0 0.5rem !important;
+  margin: 0 0.3rem;
+}
+
+@media screen and (max-width: 650px) {
+  .input-box {
+    width: 23rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .input-box {
+    width: 21rem;
+  }
+
+  .chip {
+    margin: 0 0.2rem;
+  }
 }
