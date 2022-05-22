@@ -108,7 +108,7 @@ function InputForm({ messageList, setMessageList }) {
         <button className="submit mr4" onClick={submitForm}>
           SUBMIT
         </button>
-        {loading ? <CircularProgress /> : <></>}
+        {loading && <CircularProgress />}
       </div>
     </form>
   );
